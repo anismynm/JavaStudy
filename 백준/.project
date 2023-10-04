@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>책예제</name>
+	<name>백준</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -16,7 +16,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1696396731066</id>
+			<id>1696405843630</id>
 			<name></name>
 			<type>30</type>
 			<matcher>
