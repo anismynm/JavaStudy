@@ -23,3 +23,5 @@ public class VerticalReading_10798 {
 	}
 
 }
+
+// 얘는 왜 틀렸다고 뜨지

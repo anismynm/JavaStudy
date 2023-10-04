@@ -8,7 +8,7 @@ public class Bpg165_Q10 {
         int result = 0;
         for (int i = 0; i < 5; i ++) {
             input[i] = scan.next();
-            if (input[i] = ) {
+            if (input[i] = ) { //미완성
                 result += (int)input[i];
             }
         }
