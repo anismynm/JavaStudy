@@ -13,14 +13,14 @@ public class ColorPaper_2563 {
 			int y = scan.nextInt();
 			for (int j = x; j < x + 10; j ++) {
 				for (int k = y; k < y + 10; k ++) {
-					array[j][k]++;
+					array[j][k] = 1;
 				}
 			}
 		}
 
 		for (int i = 0; i < 100; i ++) {
 			for (int j = 0; j < 100; j ++) {
-				if (array[i][j] != 0) {
+				if (array[i][j] == 1) {
 					result++;
 				}
 			}
