@@ -30,9 +30,7 @@ public class Bpg159_OC {
 				}
 			}
 			System.out.print("다시하겠습니까? (y/n)>> ");
-			String iRe = scan.next();
-			char cRe = iRe.charAt(0);
-			if (cRe == 'n') {
+			if(scan.next().equals("n")) {
 				break;
 			}
 		}
