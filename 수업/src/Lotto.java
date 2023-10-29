@@ -1,7 +1,7 @@
 
 public class Lotto {
 	
-	public static void MakingList(int List[][]) {
+	/* public static void MakingList(int List[][]) {
 		for (int i = 0; i < 5; i ++) {
 			int j = 0;
 			while (j < 6) {
@@ -17,6 +17,23 @@ public class Lotto {
 				if (k == j+1) {
 					List[i][j] = iValue;
 					j++;
+				}
+			}
+		}
+	} */ // 이거 왤캐 복잡함? 밑에 새로 짰음.
+	
+	public static void Making(int List[][]) {
+		for (int i = 0; i < 5; i ++) {
+			for (int j = 0; j < 6; j ++) {
+				double dValue = Math.random(); // 0.0 <= dValue < 1.0
+				int iValue = (int)(dValue * 45) + 1;
+				List[i][j] = iValue;
+				
+				for (int k = 0; k < j; k ++) {
+					if (List[i][j] == List[i][k]) {
+						--j;
+						break;
+					}
 				}
 			}
 		}
@@ -37,8 +54,8 @@ public class Lotto {
 	}
 
 	public static void main(String[] args) {
-		int iLottoList[][] = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}};
-		MakingList(iLottoList);
+		int iLottoList[][] = new int[5][6];
+		Making(iLottoList);
 		SortingList(iLottoList);
 		for (int i = 0; i < 5; i ++) {
 			for (int j = 0; j < 6; j ++) {
