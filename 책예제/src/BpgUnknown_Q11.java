@@ -3,18 +3,21 @@ import java.util.Scanner;
 abstract class Calc {
 	protected int a, b;
 	
-	abstract void setValue(int a, int b);
-	abstract int calculate();
-}
-
-class Add extends Calc {
-
-	@Override
+	Calc() {
+		a = 0;
+		b = 0;
+	}
+	
 	void setValue(int a, int b) {
 		this.a = a;
 		this.b = b;
-		
 	}
+	
+	abstract int calculate();
+	
+}
+
+class Add extends Calc {
 
 	@Override
 	int calculate() {
@@ -26,13 +29,6 @@ class Add extends Calc {
 class Sub extends Calc {
 
 	@Override
-	void setValue(int a, int b) {
-		this.a = a;
-		this.b = b;
-		
-	}
-
-	@Override
 	int calculate() {
 		return a - b;
 	}
@@ -40,13 +36,6 @@ class Sub extends Calc {
 }
 
 class Mul extends Calc {
-
-	@Override
-	void setValue(int a, int b) {
-		this.a = a;
-		this.b = b;
-		
-	}
 
 	@Override
 	int calculate() {
@@ -58,14 +47,10 @@ class Mul extends Calc {
 class Div extends Calc {
 
 	@Override
-	void setValue(int a, int b) {
-		this.a = a;
-		this.b = b;
-		
-	}
-
-	@Override
 	int calculate() {
+		if (b == 0) {
+			return 0;
+		}
 		return a / b;
 	}
 	
@@ -81,29 +66,25 @@ public class BpgUnknown_Q11 {
 		int b = scan.nextInt();
 		char op = scan.next().charAt(0);
 		
+		Calc calc = null;
+		
 		if (op == '+') {
-			Add calc = new Add();
-			calc.setValue(a, b);
-			System.out.println(calc.calculate());
+			calc = new Add();
 		}
 		else if (op == '-') {
-			Sub calc = new Sub();
-			calc.setValue(a, b);
-			System.out.println(calc.calculate());
+			calc = new Sub();
 		}
 		else if (op == '*') {
-			Mul calc = new Mul();
+			calc = new Mul();
 			calc.setValue(a, b);
 			System.out.println(calc.calculate());
 		}
 		else if (op == '/') {
-			Div calc = new Div();
-			calc.setValue(a, b);
-			System.out.println(calc.calculate());
+			calc = new Div();
 		}
-		else {
-			System.out.println("잘못 된 연산자 입력!");
-		}
+		
+		calc.setValue(a, b);
+		System.out.println(calc.calculate());
 		
 		scan.close();
 

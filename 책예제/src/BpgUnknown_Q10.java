@@ -51,10 +51,12 @@ class Dictionary extends PairMap {
 					return temp;
 				}
 				else {
-					keyArray[i - 1] = keyArray[i];
-					valueArray[i - 1] = valueArray[i];
-					keyArray[i] = "";
-					valueArray[i] = "";
+					for (int j = i; j < length - 1; j ++) {
+						keyArray[i] = keyArray[i + 1];
+						valueArray[i] = valueArray[i + 1];
+					}
+					keyArray[length - 1] = "";
+					valueArray[length - 1] = "";
 					length--;
 					return temp;
 				}
