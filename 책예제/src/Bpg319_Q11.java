@@ -56,7 +56,7 @@ class Div extends Calc {
 	
 }
 
-public class BpgUnknown_Q11 {
+public class Bpg319_Q11 {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);

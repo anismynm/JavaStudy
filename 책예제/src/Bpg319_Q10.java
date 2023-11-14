@@ -44,24 +44,16 @@ class Dictionary extends PairMap {
 		for (int i = 0; i < length; i ++) {
 			if (keyArray[i].equals(key)) {
 				String temp = valueArray[i];
-				if (i == 0) {
-					keyArray[i] = "";
-					valueArray[i] = "";
-					length--;
-					return temp;
+				for (int j = i; j < length - 1; j ++) {
+					keyArray[i] = keyArray[i + 1];
+					valueArray[i] = valueArray[i + 1];
 				}
-				else {
-					for (int j = i; j < length - 1; j ++) {
-						keyArray[i] = keyArray[i + 1];
-						valueArray[i] = valueArray[i + 1];
-					}
-					keyArray[length - 1] = "";
-					valueArray[length - 1] = "";
-					length--;
-					return temp;
+				keyArray[length - 1] = "";
+				valueArray[length - 1] = "";
+				length--;
+				return temp;
 				}
 			}
-		}
 		return null;
 	}
 
@@ -72,7 +64,7 @@ class Dictionary extends PairMap {
 	
 }
 
-public class BpgUnknown_Q10 {
+public class Bpg319_Q10 {
 
 	public static void main(String[] args) {
 		int iSize, iSelect = 0;
