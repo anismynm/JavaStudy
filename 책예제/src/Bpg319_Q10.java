@@ -87,13 +87,18 @@ public class Bpg319_Q10 {
 			iSelect = scan.nextInt();
 			switch(iSelect) {
 			case 1:
-				scan.nextLine();
-				System.out.print("key 입력 >> ");
-				sKey = scan.nextLine();
-				System.out.print("value 입력 >> ");
-				sValue = scan.nextLine();
-				dic.put(sKey, sValue);
-				System.out.println("입력 완료");
+				if (iSize <= dic.length()) {
+					System.out.println("더 이상 추가할 수 없습니다!");
+				}
+				else {
+					scan.nextLine();
+					System.out.print("key 입력 >> ");
+					sKey = scan.nextLine();
+					System.out.print("value 입력 >> ");
+					sValue = scan.nextLine();
+					dic.put(sKey, sValue);
+					System.out.println("입력 완료");
+				}
 				break;
 				
 			case 2:
@@ -104,10 +109,21 @@ public class Bpg319_Q10 {
 				break;
 				
 			case 3:
-				scan.nextLine();
-				System.out.print("key 입력 >> ");
-				sKey = scan.next();
-				System.out.println(sKey + " : " + dic.delete(sKey) + " 삭제 완료");
+				if (dic.length() <= 0) {
+					System.out.println("삭제할 key, value가 없습니다!");
+				}
+				else {
+					scan.nextLine();
+					System.out.print("key 입력 >> ");
+					sKey = scan.nextLine();
+					
+					if (dic.delete(sKey) == null) {
+						System.out.println("삭제할 key를 찾지 못했습니다!");
+					}
+					else {
+						System.out.println(sKey + " : " + dic.delete(sKey) + " 삭제 완료");
+					}
+				}
 				break;
 				
 			case 4:
